@@ -75,7 +75,7 @@ const FrontandBack = ({
           >
             <p>
               <CurrencyRupeeIcon fontSize="large" color="success" />
-              <span style={{ color: "white", fontSize: "32px" }}>{price}</span>
+              <span style={{ color: "black", fontSize: "32px" }}>{price}</span>
             </p>
             <span
               style={{

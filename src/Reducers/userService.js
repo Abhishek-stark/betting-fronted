@@ -37,16 +37,6 @@ const verifyingOtp = async(userData) => {
     return response.data;
 };
 
-const updatePassword = async(userData) => {
-    const response = await axios.patch(`${url}/api/updateMyPassword`, userData, {
-        headers: { Authorization: `Bearer ${user?.token}` },
-    });
-    if (response.data) {
-        localStorage.setItem("user", JSON.stringify(response.data));
-    }
-    return response.data;
-};
-
 const login = async(logindata) => {
     const res = await axios.post(`${url}/api/login`, logindata, {
         withCredentials: true,
@@ -65,6 +55,16 @@ const logout = async() => {
         localStorage.clear();
     }
     return res.data;
+};
+
+const updatePassword = async(userData) => {
+    const response = await axios.patch(`${url}/api/updateMyPassword`, userData, {
+        headers: { Authorization: `Bearer ${user?.token}` },
+    });
+    if (response.data) {
+        localStorage.setItem("user", JSON.stringify(response.data));
+    }
+    return response.data;
 };
 
 const getJoinedUsers = async() => {
