@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import HomeIcon from "@mui/icons-material/Home";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   reset,
   tenjoin,
@@ -50,6 +52,7 @@ const RotatingCard = () => {
   // }, [user, dispatch]);
 
   if (isLoading) <Loading />;
+  if (user?.message) toast.success(user?.message);
 
   const redtenth = (e) => {
     dispatch(selecttenthColor({ tenthColor: import.meta.env.VITE_RED }));
@@ -224,6 +227,7 @@ const RotatingCard = () => {
   };
   return (
     <section className="Cardsboxes">
+      <ToastContainer />
       <div className="threecards">
         <FrontandBack
           price={10}

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { reset, login, verifyingOtp } from "./../Reducers/userSlice";
 
 import Loading from "./Loading";
-import Alert from "./Alert";
+
 import "./../Styles/Formstyle.scss";
 
 const Login = () => {
@@ -71,10 +71,6 @@ const Login = () => {
     const otps = { getOtp };
     dispatch(verifyingOtp(otps));
   };
-
-  // <div className="unauthenticate__messages">
-  //       {message ? <Alert messagess={messages} /> : "No messages"}
-  //     </div>
 
   return (
     <div className="bodycontainer">

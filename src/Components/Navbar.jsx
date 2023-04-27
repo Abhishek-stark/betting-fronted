@@ -1,7 +1,8 @@
 import React, { useEffect, memo, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./../Styles/Style.scss";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { reset, checkColors, resetColor } from "../Reducers/userSlice";
@@ -82,7 +83,7 @@ const Navbar = memo(() => {
   };
 
   useEffect(() => {
-    if (isError) console.log(message);
+    if (isError) toast.error(message);
 
     dispatch(reset());
   }, [isError, navigate, message, dispatch]);
@@ -92,15 +93,12 @@ const Navbar = memo(() => {
   };
   return (
     <div className="navdiv">
+      <ToastContainer />
       {user ? (
         <button className="navdiv__btn navdiv__btn--2" onClick={navigation}>
           <AccountCircleIcon />
         </button>
-      ) : (
-        <button className="register--btn" onClick={registerhandler}>
-          Register
-        </button>
-      )}
+      ) : null}
 
       <div className="  navdiv__btn--3">
         {user?.data?.balance ? (

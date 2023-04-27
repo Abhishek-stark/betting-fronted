@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { reset, login, signup, verifyingOtp } from "./../Reducers/userSlice";
 import LoginIcon from "@mui/icons-material/Login";
 import Loading from "./Loading";
-import Alert from "./Alert";
+
 import "./../Styles/Formstyle.scss";
 
 const Form = () => {
