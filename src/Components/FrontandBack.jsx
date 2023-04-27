@@ -157,9 +157,9 @@ const FrontandBack = ({
                 <p>Output :{item}</p>
 
                 {declaration === "Win" ? (
-                  <p style={{ color: "white" }}> You Win</p>
+                  <p style={{ color: "black" }}> You Win</p>
                 ) : declaration === "Loose" ? (
-                  <p style={{ color: "white" }}> You Loose</p>
+                  <p style={{ color: "black" }}> You Loose</p>
                 ) : (
                   <p style={{ opacity: "0" }}>Undeclared</p>
                 )}

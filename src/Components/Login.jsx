@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { reset, login, verifyingOtp } from "./../Reducers/userSlice";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Loading from "./Loading";
 
 import "./../Styles/Formstyle.scss";
@@ -16,7 +17,7 @@ const Login = () => {
   const [otp, setotp] = useState({
     getOtp: "",
   });
-  const [messages, setmessages] = useState(false);
+
   const { mobileNumber, password } = loginData;
   const { getOtp } = otp;
 
@@ -27,8 +28,8 @@ const Login = () => {
 
   useEffect(() => {
     if (isError) navigate("/");
-    if (message) setmessages(message);
-    // if (!user) navigate("/");
+    if (message) toast.error(message);
+
     if (isSuccess) navigate("/dashboard");
 
     dispatch(reset());
@@ -43,7 +44,6 @@ const Login = () => {
     joinedUsers,
   ]);
   if (isLoading) <Loading />;
-  // if (message) console.log(`message is ${message}`);
 
   const Onchange = (e) => {
     setloginData((prevData) => ({
@@ -74,6 +74,7 @@ const Login = () => {
 
   return (
     <div className="bodycontainer">
+      <ToastContainer />
       <div className="main">
         <input type="checkbox" id="chk" aria-hidden="true" />
         <div className="signup">
