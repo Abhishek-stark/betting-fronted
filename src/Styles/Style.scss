@@ -110,7 +110,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding-right: 1rem;
+    // padding-right: .1rem;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     background-color: rgb(22, 29, 47);
@@ -134,7 +134,7 @@
             justify-content: center;
             height: 34px;
             width: 34px;
-            border-radius: 50%;
+            border-radius: 55%;
             color: rgb(253, 253, 253);
             & span {
                 margin-right: 5px;
@@ -146,12 +146,12 @@
         &--3 {
             background-color: transparent;
             color: white;
-            margin-right: 18px;
+            margin-right: 5px;
             border: none;
         }
     }
     &__btn:not(:last-child) {
-        margin-right: 2rem;
+        margin-right: .3rem;
     }
 }
 
@@ -294,49 +294,6 @@
     background-color: #6e8c9d;
 }
 
-// .price_Card {
-//     margin-left: 5%;
-//     margin-top: 10%;
-//     min-width: 250px;
-//     border-radius: 9px;
-//     height: auto;
-//     background-color: rgb(217, 255, 216);
-//     box-shadow: 0 0 1px 5px rgba(0, 0, 0, .25);
-//     // background-image: linear-gradient( 45deg, rgb(252, 5, 5), rgb(253, 2, 2));
-//     // background-image: linear-gradient( 45deg, rgb(0, 166, 254), rgb(43, 36, 22));
-//     // background-image: linear-gradient( 45deg, rgb(7, 8, 8), rgb(0, 0, 0));
-//     & p {
-//         // height: 17%;
-//         border-top-left-radius: 9px;
-//         border-top-right-radius: 9px;
-//         margin: 0%;
-//         display: flex;
-//         margin-left: 15%;
-//         align-items: center;
-//     }
-//     &--btn {
-//         background-color: rgb(255, 176, 7);
-//         // background-color: rgb(5, 255, 126);
-//         background-color: #ff0033;
-//         width: 64%;
-//         margin-left: 18%;
-//         height: 2.4rem;
-//         text-transform: uppercase;
-//         font-size: 1.2rem;
-//         font-weight: 700;
-//         border: none;
-//         border-radius: 5px;
-//         color: #ffffff;
-//         margin-bottom: 5%;
-//         letter-spacing: 2px;
-//         cursor: pointer;
-//     }
-//     &--h2 {
-//         text-align: center;
-//         font-size: 40px;
-//         color: #141010;
-//     }
-// }
 .backCard {
     // margin-top: 5%;
     padding: .5%;
@@ -647,7 +604,7 @@
     position: relative;
     &_side {
         height: 25rem;
-        min-width: 20rem;
+        min-width: 260px;
         transition: all .8s ease;
         // background-color: red;
         color: rgb(249, 241, 241);
@@ -657,7 +614,6 @@
         backface-visibility: hidden;
         border-radius: 9px;
         box-shadow: 0 15px 15px rgba(black, .15);
-        // width: 100%;
         &_container {
             position: absolute;
             top: 50%;

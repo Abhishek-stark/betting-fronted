@@ -47,6 +47,9 @@ const RotatingCard = () => {
     dispatch(reset());
   }, [user, isLoading, isSuccess, isError, navigate, message, dispatch]);
 
+  useEffect(() => {
+    if (user?.message) toast.success(user?.message);
+  }, [user?.message]);
   // useEffect(() => {
   //   if (user) dispatch(getJoinedUsers());
   // }, [user, dispatch]);
@@ -190,71 +193,71 @@ const RotatingCard = () => {
     setflipbtnten(!flipbtnten);
     dispatch(tenjoin());
 
-    if (
-      user?.message ===
-      "You doesn't have enough balance  to join Rs 10 contest."
-    )
-      toast.success(user?.message);
+    // if (
+    //   user?.message ===
+    //   "You doesn't have enough balance  to join Rs 10 contest."
+    // )
+    //   toast.success(user?.message);
   };
 
   const joinetweenty = (e) => {
     setflipbtntweenty(!flipbtntweenty);
     dispatch(tweentyjoin());
-    if (
-      user?.message ===
-      "You doesn't have enough balance  to join Rs 20 contest."
-    )
-      toast.success(user?.message);
+    // if (
+    //   user?.message ===
+    //   "You doesn't have enough balance  to join Rs 20 contest."
+    // )
+    //   toast.success(user?.message);
   };
 
   const joinefourty = (e) => {
     setflipbtnfourty(!flipbtnfourty);
     dispatch(fourtyjoin());
-    if (
-      user?.message ===
-      "You doesn't have enough balance  to join Rs 40 contest."
-    )
-      toast.success(user?.message);
+    // if (
+    //   user?.message ===
+    //   "You doesn't have enough balance  to join Rs 40 contest."
+    // )
+    //   toast.success(user?.message);
   };
 
   const joinesixty = (e) => {
     setflipbtnsixty(!flipbtnsixty);
     dispatch(sixtyjoin());
-    if (
-      user?.message ===
-      "You doesn't have enough balance  to join Rs 60 contest."
-    )
-      toast.success(user?.message);
+    // if (
+    //   user?.message ===
+    //   "You doesn't have enough balance  to join Rs 60 contest."
+    // )
+    //   toast.success(user?.message);
   };
 
   const joineseventy = () => {
     setflipbtnseventy(!flipbtnseventy);
     dispatch(seventyjoin());
-    if (
-      user?.message ===
-      "You doesn't have enough balance  to join Rs 70 contest."
-    )
-      toast.success(user?.message);
+    // if (
+    //   user?.message ===
+    //   "You doesn't have enough balance  to join Rs 70 contest."
+    // )
+    //   toast.success(user?.message);
   };
 
   const joineoneFifty = (e) => {
     setflipbtnoneFifty(!flipbtnoneFifty);
     dispatch(onefiftyjoin());
-    if (
-      user?.message ===
-      "You doesn't have enough balance  to join this Rs 150 contest."
-    )
-      toast.success(user?.message);
+    // if (
+    //   user?.message ===
+    //   "You doesn't have enough balance  to join this Rs 150 contest."
+    // )
+    //   toast.success(user?.message);
   };
 
   const joinehundred = (e) => {
     setflipbtnhundred(!flipbtnhundred);
     dispatch(hundredjoin());
-    if (
-      user?.message ===
-      "You doesn't have enough balance  to join this Rs 100 contest."
-    )
-      toast.success(user?.message);
+    // if (
+    //   user?.message ===
+    //   "You doesn't have enough balance  to join this Rs 100 contest."
+    // )
+    //   toast.success(user?.message);
   };
 
   const getjoinedpeoples = () => {
