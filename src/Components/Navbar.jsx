@@ -50,7 +50,18 @@ const TimePage = () => {
       console.log("ColorCheck");
     }
 
-    if (minute === 3 && second === 1 && user) {
+    if (
+      minute === 3 &&
+      second === 1 &&
+      user &&
+      (user?.data?.tenthjoin !== "No" ||
+        user?.data?.tweentyjoin !== "No" ||
+        user?.data?.fourtyjoin !== "No" ||
+        user?.data?.sixtyjoin !== "No" ||
+        user?.data?.seventyjoin !== "No" ||
+        user?.data?.hundredjoin !== "No" ||
+        user?.data?.oneFiftyjoin !== "No")
+    ) {
       dispatch(resetColor());
 
       console.log("resetting..");
