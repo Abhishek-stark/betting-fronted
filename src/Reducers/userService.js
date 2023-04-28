@@ -58,9 +58,12 @@ const logout = async() => {
 };
 
 const updatePassword = async(userData) => {
-    const response = await axios.patch(`${url}/api/updateMyPassword`, userData, {
-        headers: { Authorization: `Bearer ${user?.token}` },
-    });
+    const response = await axios.patch(
+        `${url}/api/updateMyPassword`,
+        userData, {
+            headers: { Authorization: `Bearer ${user?.token}` },
+        }, { withCredentials: true }
+    );
     if (response.data) {
         localStorage.setItem("user", JSON.stringify(response.data));
     }

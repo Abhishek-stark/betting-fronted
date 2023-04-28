@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout, updatePassword, reset } from "../Reducers/userSlice";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Button from "@mui/material/Button";
 import { CurrencyRupee } from "@mui/icons-material";
 
@@ -31,6 +32,8 @@ const Dashsetting = () => {
     if (!user) navigate("/");
     if (isError) console.log(message);
     if (isLoading) console.log("loading");
+    if (user?.message === "Your password changed successfully")
+      toast.success(user?.message);
     if (isSuccess) console.log("success", message);
     dispatch(reset());
   }, [isError, message, isLoading, isSuccess, dispatch]);
@@ -97,6 +100,7 @@ const Dashsetting = () => {
   return (
     <>
       <div className="setting">
+        <ToastContainer />
         <div className="setting_left">
           <div onClick={btnoneClick} className="setting_left--div">
             Amount

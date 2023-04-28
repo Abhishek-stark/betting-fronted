@@ -10,7 +10,7 @@ import Loading from "./Loading";
 const Registerpage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const verifymessage = JSON.parse(localStorage.getItem("signupmessage"));
   const [data, setdata] = useState({
     name: "",
     email: "",
@@ -21,7 +21,9 @@ const Registerpage = () => {
   });
   const { name, email, mobileNumber, password, confirmPassword } = data;
 
-  const { isError, isSuccess, isLoading } = useSelector((state) => state.user);
+  const { isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.user
+  );
 
   const Onchange = (e) => {
     setdata((prevdata) => ({ ...prevdata, [e.target.name]: e.target.value }));
@@ -29,9 +31,9 @@ const Registerpage = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      toast.success("Otp send to your number Verify to login");
+      toast.success(verifymessage?.message);
     }
-    if (isError) navigate("/");
+    if (isError) toast.error("Error in signup");
     dispatch(reset());
   }, [isSuccess, isError, isLoading, navigate, dispatch]);
 

@@ -48,7 +48,8 @@ const RotatingCard = () => {
   }, [user, isLoading, isSuccess, isError, navigate, message, dispatch]);
 
   useEffect(() => {
-    if (user?.message) toast.success(user?.message);
+    if (user?.message != "Your password changed successfully")
+      toast.success(user?.message);
   }, [user?.message]);
   // useEffect(() => {
   //   if (user) dispatch(getJoinedUsers());
