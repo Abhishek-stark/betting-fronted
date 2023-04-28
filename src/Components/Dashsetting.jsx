@@ -108,6 +108,10 @@ const Dashsetting = () => {
             Number
           </div>
 
+          <div onClick={btnfourClick} className="setting_left--div">
+            ReferelId
+          </div>
+
           <div onClick={logoutbtn} className="setting_left--div">
             Logout
           </div>
@@ -193,6 +197,13 @@ const Dashsetting = () => {
                 Update
               </Button>
             </form>
+          </div>
+          <div
+            style={{ color: "gray" }}
+            className="setting_right--div"
+            id={showfour}
+          >
+            Your ReferId is : {user?.data?.referId}
           </div>
         </div>
       </div>

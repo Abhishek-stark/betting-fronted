@@ -94,7 +94,7 @@ const Navbar = memo(() => {
   };
 
   useEffect(() => {
-    if (isError) console.log("error from navbar");
+    if (isError) console.log(message);
     dispatch(reset());
   }, [isError, navigate, message, dispatch]);
 

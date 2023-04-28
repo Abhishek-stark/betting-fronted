@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./../Styles/Formstyle.scss";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useSelector, useDispatch } from "react-redux";
 import { reset, signup } from "../Reducers/userSlice";
 import Loading from "./Loading";
@@ -27,7 +28,9 @@ const Registerpage = () => {
   };
 
   useEffect(() => {
-    if (isSuccess) navigate("/dashboard");
+    if (isSuccess) {
+      toast.success("Otp send to your number Verify to login");
+    }
     if (isError) navigate("/");
     dispatch(reset());
   }, [isSuccess, isError, isLoading, navigate, dispatch]);
@@ -42,6 +45,7 @@ const Registerpage = () => {
   if (isLoading) <Loading />;
   return (
     <div className="divformContainer">
+      <ToastContainer />
       <form className="divformContainer__form" onSubmit={Submithandler}>
         <input
           type="text"
