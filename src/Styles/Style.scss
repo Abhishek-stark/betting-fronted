@@ -302,7 +302,7 @@
     border-radius: 9px;
     // background-image: linear-gradient( 45deg, rgb(62, 139, 254), rgb(88, 233, 255), );
     background-color: rgb(255, 255, 255);
-    min-width: 310px;
+    min-width: 290px;
     // margin-left: 4%;
     &__selectbtn {
         margin-top: 10%;
@@ -657,6 +657,7 @@
             &-1 {
                 // background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
                 background-color: white;
+                min-width: 290px;
                 height: 464px;
             }
         }
