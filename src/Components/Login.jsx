@@ -23,7 +23,7 @@ const Login = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { user, isLoading, isError, isSuccess, message, joinedUsers } =
+  const { isLoading, isError, isSuccess, message, joinedUsers, signupmessage } =
     useSelector((state) => state.user);
 
   useEffect(() => {
@@ -33,16 +33,12 @@ const Login = () => {
     if (isSuccess) navigate("/dashboard");
 
     dispatch(reset());
-  }, [
-    isError,
-    isLoading,
-    isSuccess,
-    dispatch,
-    navigate,
-    user,
-    message,
-    joinedUsers,
-  ]);
+  }, [isError, isLoading, isSuccess, dispatch, navigate, message, joinedUsers]);
+
+  useEffect(() => {
+    if (signupmessage?.message) toast.success(signupmessage?.message);
+  }, [signupmessage?.message]);
+
   if (isLoading) <Loading />;
 
   const Onchange = (e) => {

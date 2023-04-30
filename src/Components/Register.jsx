@@ -10,7 +10,7 @@ import Loading from "./Loading";
 const Registerpage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const verifymessage = JSON.parse(localStorage.getItem("signupmessage"));
+  // const verifymessage = JSON.parse(localStorage.getItem("signupmessage"));
   const [data, setdata] = useState({
     name: "",
     email: "",
@@ -19,9 +19,16 @@ const Registerpage = () => {
 
     confirmPassword: "",
   });
-  const { name, email, mobileNumber, password, confirmPassword } = data;
+  const {
+    name,
+    email,
+    mobileNumber,
+    password,
+    confirmPassword,
+    // signupmessage,
+  } = data;
 
-  const { isError, isSuccess, isLoading, message } = useSelector(
+  const { isError, isSuccess, isLoading, message, signupmessage } = useSelector(
     (state) => state.user
   );
 
@@ -30,12 +37,15 @@ const Registerpage = () => {
   };
 
   useEffect(() => {
-    if (isSuccess) {
-      toast.success(verifymessage?.message);
-    }
-    if (isError) toast.error("Error in signup");
+    if (isError) toast.error(signupmessage?.message);
+    if (isSuccess) navigate("/");
+
     dispatch(reset());
   }, [isSuccess, isError, isLoading, navigate, dispatch]);
+
+  useEffect(() => {
+    if (signupmessage?.message) toast.success(signup?.message);
+  }, [signupmessage?.message]);
 
   const Submithandler = async (e) => {
     e.preventDefault();

@@ -482,12 +482,12 @@ const userSlice = createSlice({
             .addCase(verifyingOtp.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isSuccess = true;
-                state.user = action.payload;
+                state.signupmessage = action.payload;
             })
             .addCase(verifyingOtp.rejected, (state, action) => {
                 state.isLoading = false;
                 state.isError = true;
-                state.user = null;
+                state.signupmessage = null;
 
                 state.message = action.payload;
             })
@@ -497,6 +497,7 @@ const userSlice = createSlice({
             .addCase(login.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isSuccess = true;
+                state.signupmessage = null;
                 state.user = action.payload;
             })
             .addCase(login.rejected, (state, action) => {
