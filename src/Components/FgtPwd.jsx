@@ -26,7 +26,7 @@ const FgtPwd = () => {
   };
 
   useEffect(() => {
-    if (isSuccess) navigate("/dashboard");
+    if (isSuccess) navigate("/");
     if (isError) navigate("/");
     dispatch(reset());
   }, [isSuccess, isError, isLoading, navigate, dispatch]);
