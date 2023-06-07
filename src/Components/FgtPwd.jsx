@@ -5,14 +5,14 @@ import { resetpassword, forgotpassword, reset } from "../Reducers/userSlice";
 
 const FgtPwd = () => {
   const [pwddata, setpwddata] = useState({ number: "" });
-  const [otp, setotp] = useState({
-    getOtp: undefined,
+  const [confirmotp, setotp] = useState({
+    otp: "",
     changePassword: "",
   });
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { getOtp, changePassword } = otp;
+  const { otp, changePassword } = confirmotp;
   const { number } = pwddata;
 
   const { user, isError, isSuccess, isLoading } = useSelector(
@@ -40,8 +40,9 @@ const FgtPwd = () => {
   };
   const verifyOtp = async (e) => {
     e.preventDefault();
-    const otps = { getOtp };
-    dispatch(resetpassword(otps, changePassword));
+    // const otps = { otp };
+
+    dispatch(resetpassword(otp, changePassword));
   };
   return (
     <div className="bodycontainer">
@@ -79,9 +80,9 @@ const FgtPwd = () => {
               type="text"
               placeholder="Enter OTP"
               required
-              name="getOtp"
+              name="otp"
               onChange={Otpchange}
-              value={getOtp}
+              value={otp}
               maxLength={7}
               autoComplete="off"
             />
