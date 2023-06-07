@@ -61,6 +61,7 @@ function App() {
             </Suspense>
           }
         />{" "}
+        <Route path="/forgotpassword" element={<FgtPwd />} />
         <Route path="/loading" exact element={<Loading />} />{" "}
         <Route
           path="/timer"
