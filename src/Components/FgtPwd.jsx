@@ -42,7 +42,7 @@ const FgtPwd = () => {
     e.preventDefault();
     // const otps = { otp };
 
-    dispatch(resetpassword(otp, changePassword));
+    dispatch(resetpassword({ otp, changePassword }));
   };
   return (
     <div className="bodycontainer">
