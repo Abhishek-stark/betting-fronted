@@ -160,3 +160,24 @@
 //         submitfuncP={pinkoneFifty}
 //         items={user?.item}
 //       />
+
+// <Test
+//           price={70}
+//           joined={user?.data?.seventyjoin}
+//           join={joineseventy}
+//           btn={user?.data?.seventyjoin === "yes" ? true : false}
+//           totaljoin={joinedUsers?.seventyJoined}
+//           seeResults={result}
+//           classes="seventyCard"
+//           getjoinedpeople={getjoinedpeoples}
+//         />
+//         <Test
+//           price={100}
+//           joined={user?.data?.hundredjoin}
+//           join={joinehundred}
+//           btn={user?.data?.hundredjoin === "yes" ? true : false}
+//           totaljoin={joinedUsers?.hundredJoined}
+//           seeResults={result}
+//           classes="hundredCard"
+//           getjoinedpeople={getjoinedpeoples}
+//         />
