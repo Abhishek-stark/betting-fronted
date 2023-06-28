@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout, updatePassword, reset } from "../Reducers/userSlice";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
 import Button from "@mui/material/Button";
 import { CurrencyRupee } from "@mui/icons-material";
 import "./../Styles/Style.scss";
@@ -133,8 +133,6 @@ const Balance = () => {
 };
 
 const Dashboard = () => {
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
   const { user, isError, message } = useSelector((state) => state.user);
   const [changes, setchanges] = useState("balance");
   const [classchange, setclasschange] = useState("balanceClass");
