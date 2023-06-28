@@ -268,30 +268,7 @@ const MainCard = () => {
         }
         price={60}
       />
-      <BackCard
-        item={user?.data?.seventy === "0" ? "Not Declared" : user?.item}
-        declaration={
-          user?.data?.seventy === user?.item
-            ? "Win"
-            : user?.data?.seventy === "0" || user?.item === "Not Declared"
-            ? "Not Declared"
-            : "Loose"
-        }
-        Colorbtn={user?.data?.seventyjoin === "yes" ? false : true}
-        choosen={user?.data?.seventy}
-        submitfuncR={redseventy}
-        submitfuncG={greenseventy}
-        submitfuncY={yellowseventy}
-        submitfuncP={pinkseventy}
-        submitfuncB={blueseventy}
-        joined={user?.data?.seventyjoin}
-        appearence={
-          user?.data?.seventyjoin === "yes" || user?.data?.seventy !== "0"
-            ? true
-            : false
-        }
-        price={70}
-      />
+
       <BackCard
         item={user?.data?.hundred === "0" ? "Not Declared" : user?.item}
         declaration={
